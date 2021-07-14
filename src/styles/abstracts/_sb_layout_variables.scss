@@ -276,3 +276,9 @@ $topbarMenuBgColor:$primaryLightColor;
 $sbPickRedBg : #bc6474;
 
 $accentColor: #ff6377;
+
+$themeIconPath : "test_theme_dark";
+
+@mixin theme($theme) {
+  background: url('/assets/'+$theme+'/logo.png') top left no-repeat;
+}

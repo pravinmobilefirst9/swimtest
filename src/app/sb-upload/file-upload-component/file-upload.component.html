@@ -5,6 +5,12 @@
                 <h1>Upload</h1>
                 <p-growl [value]="msgs"></p-growl>
 
+                 
+                  
+                  <button mat-stroked-button (click)="openSnackBar()" class="MessageButton" aria-label="Show an example snack-bar">
+                    Pizza party
+                  </button>
+
                 <p-fileUpload name="file" [url]="destination" (onUpload)="onUpload($event)"
                         accept=".csv" maxFileSize="1000000"
                         (onBeforeSend)="onBeforeSend($event)">

@@ -12,7 +12,47 @@
     .swimbird-icon {
         width: 152px;
         height: 162px;
-        background: url($swimbirdIconPath) top left no-repeat;
+        //background: url($swimbirdIconPath) top left no-repeat;
+
+        //@include theme(test_theme_dark);
+
+        //& < app-root.dark-theme
+        //{
+            //background: url('/assets/dark-theme/logo.png') top left no-repeat;
+        //}
+
+        @if('.splash-screen-layout123'){
+
+            background: url('/assets/splash-screen-layout/logo.png') top left no-repeat;
+
+        }
+        @else if ('.splash-screen-layout')
+        {
+            background: url('/assets/test_theme_dark/logo.png') top left no-repeat;
+        }
+        @else
+        {
+            background: url('/assets/default-theme/logo.png') top left no-repeat;
+        }
+
+        //@at-root .dark-theme#{&} {
+               
+          //  background: url('/assets/'+$themeIconPath+'/logo.png') top left no-repeat;
+        // }
+
+        //dark-theme &
+        //{
+        //    background: url('/assets/'+$themeIconPath+'/logo.png') top left no-repeat;
+        //} 
+
+        //@include variant('.is-active') {
+        //    background: url('/assets/'+$themeIconPath+'/logo.png') top left no-repeat;
+        //}
+
+        //@at-root .dark-theme#{&} {
+        //  background: url('/assets/'+$themeIconPath+'/logo.png') top left no-repeat;
+        //}
+        
         background-size: contain;
         display: block;
         margin-left: -40px;
