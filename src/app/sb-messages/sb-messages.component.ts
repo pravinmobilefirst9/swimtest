@@ -12,9 +12,14 @@ export class SbMessagesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    console.log(this.messages);
   }
 
   getMessageIconsAndColor(message) {
+
+    console.log("SB Message==>"+message.severity);
+
     if (message.severity === 'error') {
       return { color: 'error-bg', icon: 'error_outline'};
     } else if (message.severity === 'success') {

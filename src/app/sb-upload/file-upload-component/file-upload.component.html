@@ -3,17 +3,11 @@
         <div class="ui-g-12">
             <div class="card">
                 <h1>Upload</h1>
-                <p-growl [value]="msgs"></p-growl>
-
-                 
-                  
-                  <button mat-stroked-button (click)="openSnackBar()" class="MessageButton" aria-label="Show an example snack-bar">
-                    Pizza party
-                  </button>
+                
+                <app-sb-messages [messages]="msgs"></app-sb-messages>
 
                 <p-fileUpload name="file" [url]="destination" (onUpload)="onUpload($event)"
-                        accept=".csv" maxFileSize="1000000"
-                        (onBeforeSend)="onBeforeSend($event)">
+                        multiple="multiple" accept=".csv" maxFileSize="1000000">
                         <ng-template pTemplate="content">
                             <ul *ngIf="uploadedFiles.length">
                                 <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
