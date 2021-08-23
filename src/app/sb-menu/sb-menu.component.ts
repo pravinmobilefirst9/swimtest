@@ -65,6 +65,17 @@ export class SbMenuComponent {
   }
 
   ngOnInit() {
+    // dynamic images from theme - <code starts>
+    var picture :any = document.getElementsByClassName('swibiLogo');
+    var theme = this.appConfig.theme.cssTheme;
+    picture[0].style.background = "url(/assets/images/"+theme+"/logo.svg) top left no-repeat";
+    // for responsive
+    var picture1 :any = document.getElementsByClassName('swimbird-icon');
+    var theme1 = this.appConfig.theme.cssTheme;
+    picture1[0].style.background = "url(/assets/images/"+theme+"/logo.png) top left no-repeat";
+    picture1[0].style["background-size"]="contain"
+    picture1[0].style["background-position"]="55px 10px"
+    // dynamic images from theme - <code ends>
     this.isVisible = true;
     this.menuService.getMenuConfiguration()
       .then(mis => { this.model = mis; })
